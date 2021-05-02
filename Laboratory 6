@@ -1,0 +1,47 @@
+import numpy as np
+
+MA = np.array([[8, 8], [7, 5], [5, 8]])
+MB = np.array([[6, 8], [9, 8]])
+MC = np.identity(5)
+MD = np.ones([7, 5])
+ME = np.zeros([6, 4])
+
+def describe_mat(matrix):
+        is_square = True if matrix.shape[0] == matrix.shape[1] else False
+        print(f'Matrix:\n{matrix}\n'
+          f'\nShape:\t{matrix.shape}'
+          f'\nRank:\t{matrix.ndim}'
+          f'\nsize:\t{matrix.size}'
+          f'\nIs Square: {is_square}\n'
+
+              )
+        Sum = sum(matrix)
+        sums = sum(Sum)
+        diagonal = np.diagonal(matrix)
+        result = 1
+        for x in diagonal:
+            result = result = x
+
+        if sums == 0:
+            print("Zero:", True,"ones:", False,"identity:", False)
+
+        elif sums == matrix.size:
+            print("Zero:", False, "ones:", True, "identity:", False)
+
+        elif result ==1:
+            print("Zero:", False, "ones:", False, "identity:", True)
+
+        else:
+            print("Zero:", False, "ones:", False, "identity:", False)
+
+
+describe_mat(MA)
+print('_' * 66)
+describe_mat(MB)
+print('_' * 66)
+describe_mat(MC)
+print('_' * 66)
+describe_mat(MD)
+print('_' * 66)
+describe_mat(ME)
+print('_' * 66)
